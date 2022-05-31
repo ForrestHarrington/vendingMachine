@@ -1,5 +1,4 @@
-//import java.util.*;
-
+//represents a single type of product, with an amount and a price 
 public class Product {
 
     //members of a product are the name, price and quantity, you may change the 
@@ -8,12 +7,14 @@ public class Product {
     private float cost;
     private int amount;
 
+    //Constructor
     Product(String name, float cost, int amount) {
         this.name = name;
         this.cost = cost;
         this.amount = amount;
     }
 
+    //New equality check for custom object
     @Override
     public boolean equals(Object obj) {
         if(obj == this) {
@@ -28,10 +29,12 @@ public class Product {
         }
     }
 
+    //Reduces quantity of item when purchased
     public void itemTaken() {
         this.amount -= 1;
     }
 
+    //For adding new items based on new JSON object (not fully implemented elsewhere)
     public void itemsAdded(int added) {
         this.amount += added;
     }
